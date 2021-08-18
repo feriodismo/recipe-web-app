@@ -5,6 +5,7 @@ Vue.use(VueRouter);
 
 import Welcome from './components/Welcome.vue';
 import Dashboard from './components/Dashboard.vue';
+import NotFound from './components/NotFound.vue';
 import App from './App.vue';
 
 const router = new VueRouter({
@@ -13,7 +14,8 @@ const router = new VueRouter({
   routes: [
     
     { path: '/', component: Welcome },
-    { path: '/dashboard', component: Dashboard }
+    { path: '/dashboard', component: Dashboard },
+    { path: '/*', component: NotFound }
   ]
 });
 

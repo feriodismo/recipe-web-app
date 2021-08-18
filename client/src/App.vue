@@ -28,5 +28,6 @@ export default {
 
 <style>
   @import url('https://fonts.googleapis.com/css2?family=Inter&family=Open+Sans:wght@600&display=swap');
+  @import "//netdna.bootstrapcdn.com/font-awesome/3.0/css/font-awesome.css";
   @import './assets/styles/style.css';
 </style>

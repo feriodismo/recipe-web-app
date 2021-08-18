@@ -1,7 +1,7 @@
 <template>
   <main class="fl-column content dashboard">
      
-      <input v-on:input="getInput" placeholder="search for recipes" class="search-bar"/>
+      <input v-on:input="getInput" type="text" placeholder="search for recipes by text input" class="search-bar"/>
       <span v-on:click="toggleFilters" class="fl-row tags-toggle">filter by ingredients</span>
       <ul class="fl-row tags-wrap">
             
@@ -26,7 +26,7 @@
             </span>
 
             <span class="fl-column list-ingredients-wrap">
-
+                <p class="fl-column">INGREDIENTS:</p>
                 <li class="fl-row list-ingredients" 
                     v-for=" ( ingredient , ii ) in recipe.ingredients " 
                     v-bind:key=" ii ">
@@ -63,11 +63,13 @@ export default {
   },
   methods: {
       
+      // Search input listener callback
       getInput(e){
           this.searchValue = e.target.value.toLowerCase();
           this.search();
       },
 
+      // Search by input+filters logic, updating "recipes" array
       search(){
           this.recipes = [];
           for(let iterator in data){
@@ -90,6 +92,7 @@ export default {
           e.target.nextSibling.style.display == "flex" ? e.target.nextSibling.style.display = "none" : e.target.nextSibling.style.display = "flex";
       },
 
+      // Selection of filter logic, updating the "filter" array
       selectFilter(e){
         if(this.filters.indexOf(e.target.outerText) !== -1){
             this.filters.splice(this.filters.indexOf(e.target.outerText), 1);
@@ -103,6 +106,7 @@ export default {
         this.search();
       },
 
+      // Function that get unique ingredients for recipe data
       getIngredients(){
           let ingredientsColection = []
           for(let i in data){
@@ -112,10 +116,10 @@ export default {
           }
           return [... new Set(ingredientsColection)]
       }
+
   },
   mounted () {
       this.ingredients = this.getIngredients();
-      console.log(this.ingredients)
   }
 }
 </script>
