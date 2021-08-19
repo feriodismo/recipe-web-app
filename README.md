@@ -15,16 +15,18 @@ The recipes and the ingredients data are on .JSON file to replicate a get reques
 The design was inspired by the [Graphite Web Page ](https://www.graphitehq.com/) using the logo, font, and some styles to follow the visual guidlines
 
 ### LOCAL RUN
-For running the application `clone` the repo and run: 
+For running the application `clone` the repo and run:
 
-1- `npm i`<br>
-2- `npm run serve`
+1- `cd recipe-web-app`<br>
+2- `npm i`<br>
+3- `npm run serve`
 
 ### RUNNING WITH DOCKER
 
 For running the application with docker `clone` the repo and run: 
 
-1- `docker build . -t recipe`<br>
-2- `docker run -p 8080:8080 recipe`
+1- `cd recipe-web-app`<br>
+2- `docker build . -t recipe`<br>
+3- `docker run -p 8080:8080 recipe`
 
 *Enjoy!*
