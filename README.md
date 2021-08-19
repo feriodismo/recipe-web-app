@@ -20,6 +20,11 @@ For running the application `clone` the repo and run:
 1- `npm i`<br>
 2- `npm run serve`
 
-The web app should be running at `http://localhost:8081`
+## RUNNING WITH DOCKER
+
+For running the application with docker `clone` the repo and run: 
+
+1- `docker build . -t recipe`<br>
+2- `docker run -p 8080:8080 recipe`
 
 *Enjoy!*
