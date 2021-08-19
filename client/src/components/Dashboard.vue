@@ -1,7 +1,7 @@
 <template>
   <main class="fl-column content dashboard">
      
-      <input v-on:input="getInput" type="text" placeholder="search for recipes by text input" class="search-bar"/>
+      <input v-on:input="getInput" type="text" placeholder="search for recipes" class="search-bar"/>
       <span v-on:click="toggleFilters" class="fl-row tags-toggle">filter by ingredients</span>
       <ul class="fl-row tags-wrap">
             
@@ -20,11 +20,14 @@
             
             v-for=" ( recipe, i ) in recipes " 
             v-bind:key=" i ">
-
-            <span v-on:click="toggleIngredients" class="fl-column list-title">
-                {{ recipe.title }}
+            <span class="fl-row list-top">
+            <span class="list-img" :data-index="i" v-on:click="toggleIngredients">
+                <img style="width: 100px" :src="getImgUrl(recipe.image)" />
             </span>
-
+            <span class="fl-row list-title" :data-index="i" v-on:click="toggleIngredients">
+               {{ recipe.title }}
+            </span>
+            </span>
             <span class="fl-column list-ingredients-wrap">
                 <p class="fl-column">INGREDIENTS:</p>
                 <li class="fl-row list-ingredients" 
@@ -40,6 +43,8 @@
         </ul>
 
       </div>
+      <Background />
+
 
   </main>
 </template>
@@ -47,10 +52,12 @@
 <script>
 
 import data from "../assets/data.json";
+import Background from "../templates/Background.vue";
 
 export default {
   name: 'Dashboard',
   components: {
+      Background
   },
   data() {
       return {
@@ -67,6 +74,10 @@ export default {
       getInput(e){
           this.searchValue = e.target.value.toLowerCase();
           this.search();
+      },
+      getImgUrl(url){
+          console.log(url)
+          return require('../assets'+url);
       },
 
       // Search by input+filters logic, updating "recipes" array
@@ -85,7 +96,8 @@ export default {
       },
 
       toggleIngredients(e){
-          e.target.nextSibling.style.display == "flex" ? e.target.nextSibling.style.display = "none" : e.target.nextSibling.style.display = "flex";
+          let wrap =  document.querySelectorAll(".list-ingredients-wrap");
+          wrap[e.target.dataset.index].style.display == "flex" ? wrap[e.target.dataset.index].style.display = "none" : wrap[e.target.dataset.index].style.display = "flex";
       },
 
       toggleFilters(e){
@@ -115,11 +127,19 @@ export default {
             }
           }
           return [... new Set(ingredientsColection)]
-      }
+      },
+
+    //   getImageUrl(){
+    //       for(let i in data){
+    //           this.data[i].image = require(this.data[i].image);
+    //           console.log(this.data[i].image)
+    //       }
+    //   }
 
   },
   mounted () {
       this.ingredients = this.getIngredients();
+    //   this.getImageUrl();
   }
 }
 </script>

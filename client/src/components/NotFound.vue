@@ -20,14 +20,17 @@
         </router-link>
 
     </span>
-
+    <Background />
   </main>
 
 </template>
 
 <script>
-
+import Background from "../templates/Background.vue";
 export default {
   name: 'Welcome',
+  components: {
+    Background
+  }
 }
 </script>

@@ -6,39 +6,48 @@
                 "peanut butter",
                 "jelly",
                 "bread"
-            ]
+            ],
+            "image": "/images/recipe_1.jpg"
         },
     "1":
-        {"title":"buckeyes",
+        {
+            "title":"buckeyes",
             "ingredients": [
                 "chocolate",
                 "peanut butter",
                 "sugar"
-            ]
+            ],
+            "image": "/images/recipe_2.jpg"
         },
     "2":
-        {"title":"Hawaiian pizza",
+        {
+            "title":"Hawaiian pizza",
             "ingredients": [
                 "cheese",
                 "pizza dough",
                 "tomato sauce",
                 "pineapple",
                 "bacon"
-            ]
+            ],
+            "image": "/images/recipe_3.jpg"
         },
     "3":
-        {"title":"hot chocolate",
+        {
+            "title":"hot chocolate",
             "ingredients": [
                 "milk",
                 "chocolate",
                 "sugar"
-            ]
+            ],
+            "image": "/images/recipe_4.jpg"
         },
     "4":
-        {"title":"grilled cheese sandwich",
+        {
+            "title":"grilled cheese sandwich",
             "ingredients": [
                 "bread",
                 "cheese"
-            ]
+            ],
+            "image": "/images/recipe_5.jpg"
         }
 }

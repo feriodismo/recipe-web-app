@@ -7,7 +7,6 @@
       @touchmove.prevent
       @scroll.prevent />
     </div>
-
   </div>
 </template>
 
@@ -20,10 +19,11 @@ import Header from './templates/Header.vue'
 
 export default {
   name: 'App',
-   components: {
+  components: {
     Header,
-  },
+  }
 }
+
 </script>
 
 <style>
