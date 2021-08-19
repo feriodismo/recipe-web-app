@@ -20,7 +20,7 @@ For running the application `clone` the repo and run:
 1- `npm i`<br>
 2- `npm run serve`
 
-## RUNNING WITH DOCKER
+### RUNNING WITH DOCKER
 
 For running the application with docker `clone` the repo and run: 
 
